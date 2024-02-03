@@ -1,10 +1,8 @@
 # multiflex-docker
     
-    Docker 테스트를 위한 프로젝트입니다.
+    > Dockerfile 기반으로 테스트를 위한 프로젝트입니다.
 
-* 참고 Reference : [Dockfile 이해하고 Nginx 구성 및 실행하기](https://adjh54.tistory.com/414)
-
-
+<br/>
 <br/>
 
 
@@ -15,7 +13,12 @@
 
 <br/>
 
-<실행 방법>
+* 참고 Reference : [Dockerfile 이해하고 Nginx 구성 및 실행하기](https://adjh54.tistory.com/414)
+
+<br/>
+
+### 실행 방법  
+
 
     # docker 컨테이너 이미지 생성
     $ docker build -t nginx:simple-nginx .
@@ -23,7 +26,8 @@
     # docker 컨테이너 생성 및 실행
     $ docker run -d -p 8080:80 --name simple-nginx nginx:simple-nginx
 
-<br>
+<br/>
+<br/>
 
 
 ## 2. simple-vault
@@ -32,7 +36,12 @@
 
 <br/>
 
-<실행 방법>
+
+- 참고 Reference : [Dockerfile로 Vault 구성 방법](https://adjh54.tistory.com/415)
+
+<br/>
+
+### 실행 방법  
 
     # docker 컨테이너 이미지 생성
     $ docker build -t hashicorp/vault .
