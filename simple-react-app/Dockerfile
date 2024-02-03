@@ -1,6 +1,6 @@
-FROM node:18
+FROM node:18-alpine
 
-WORKDIR src/
+WORKDIR /src
 
 COPY package.json .
 
@@ -12,7 +12,6 @@ COPY . .
 
 EXPOSE 3000
 
-# 런타임을 정의합니다.
 CMD [ "yarn", "start" ]
 # or
 # CMD [ "npm", "start" ]
