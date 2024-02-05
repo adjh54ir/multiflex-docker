@@ -65,7 +65,7 @@
 
 <br/>
 
-## 3. simple-spring-boot
+## 4. simple-spring-boot
 
     > dockerfile을 기반으로 간단한 Spring Boot App을 생성하고 실행합니다.
 
