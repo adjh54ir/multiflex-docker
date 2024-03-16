@@ -1,8 +1,8 @@
 # 기본 이미지를 설정합니다. 여기서는 RabbitMQ 이미지를 선택했습니다.
-FROM rabbitmq:3.9-management
+FROM rabbitmq:3.9
 
 # RabbitMQ 설정 파일을 복사합니다.
-COPY ./config/rabbitmq1.conf /etc/rabbitmq
+COPY ./config/rabbitmq.conf /etc/rabbitmq
 
 # RabbitMQ 플러그인을 활성화합니다.
 RUN rabbitmq-plugins enable --offline rabbitmq_management

@@ -74,6 +74,19 @@
 - 참고 Reference : [Dockerfile을 이용한 Spring Boot App 배포 환경 구성 및 실행하기](https://adjh54.tistory.com/420)
 
 <br/>
+<br/>
+
+
+## 5. simple-redis
+
+    > dockerfile을 기반으로 간단한 Redis을 생성하고 실행합니다.
+
+<br/>
+
+- 참고 Reference : [Dockerfile을 이용한 Redis 환경 구성 및 실행방법](https://adjh54.tistory.com/449)
+
+<br/>
+
 
 
     # 컨테이너 이미지 생성
@@ -81,4 +94,10 @@
 
     # 컨테이너 생성 및 실행
     $ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-app
+
+    # docker 컨테이너 아이디를 확인합니다
+    $ docker ps
+    
+    # redis-cli를 접근합니다.
+    $ docker exec -it <CONTAINER ID> redis-cli
 

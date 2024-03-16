@@ -1,0 +1,19 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:../simple-nginx/config/nginx.conf
+    depends_on:
+      - react
+  react:
+    build: ./Dockerfile
+    volumes:
+      - .:/src
+      - /src/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
