@@ -1,5 +1,5 @@
 # 기본 이미지를 설정합니다. 여기서는 RabbitMQ 이미지를 선택했습니다.
-FROM rabbitmq:3.9
+FROM rabbitmq:3.13-management
 
 # RabbitMQ 설정 파일을 복사합니다.
 COPY ./config/rabbitmq.conf /etc/rabbitmq
