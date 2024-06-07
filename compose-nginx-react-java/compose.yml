@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  react-app:
+    build:
+      context: ./docker-react-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:8080"
+    environment:
+      - NODE_ENV=development
+
+  spring-boot:
+    build:
+      context: ./docker-spring-boot
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
