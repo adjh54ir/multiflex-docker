@@ -85,7 +85,6 @@
 <br/>
 <br/>
 
-
 ## 5. simple-redis
 
     > dockerfile을 기반으로 간단한 Redis을 생성하고 실행합니다.
@@ -107,7 +106,7 @@
 
     # docker 컨테이너 아이디를 확인합니다
     $ docker ps
-    
+
     # redis-cli를 접근합니다.
     $ docker exec -it <CONTAINER ID> redis-cli
 
@@ -133,6 +132,27 @@
     # 컨테이너 생성 및 실행
     $ docker run -d --name simple-rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq
 
+<br/>
+<br/>
+
+## 6. simple-docker-compose
+
+    > docker-compose를 이용한 React App, Spring Boot App 일괄 배포하기
 
 <br/>
+
+- 참고 Reference : [Docker 이해하기 -4 : Docker Compose 이해하고 구성하기](https://adjh54.tistory.com/503)
+
 <br/>
+
+    # 프로젝트 접근
+    $ cd simple-docker-compose
+
+    # docker compose 실행
+    $ docker-compose up
+
+    # docker compose 상태 확인
+    $ docker-compose ps
+
+    # docker compose 삭제
+    $ docker-compose down
