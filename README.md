@@ -17,11 +17,13 @@
 
 ### 실행 방법
 
-    # docker 컨테이너 이미지 생성
-    $ docker build -t nginx:simple-nginx .
+```shell
+# docker 컨테이너 이미지 생성
+$ docker build -t nginx:simple-nginx .
 
-    # docker 컨테이너 생성 및 실행
-    $ docker run -d -p 8080:80 --name simple-nginx nginx:simple-nginx
+# docker 컨테이너 생성 및 실행
+$ docker run -d -p 8080:80 --name simple-nginx nginx:simple-nginx
+```
 
 <br/>
 <br/>
@@ -38,11 +40,13 @@
 
 ### 실행 방법
 
-    # docker 컨테이너 이미지 생성
-    $ docker build -t hashicorp/vault .
+```shell
+# docker 컨테이너 이미지 생성
+$ docker build -t hashicorp/vault .
 
-    # docker 컨테이너 생성 및 실행
-    $ docker run -d --cap-add IPC_LOCK --name vault -p 8200:8200 hashicorp/vault
+# docker 컨테이너 생성 및 실행
+$ docker run -d --cap-add IPC_LOCK --name vault -p 8200:8200 hashicorp/vault
+```
 
 <br/>
 <br/>
@@ -57,11 +61,15 @@
 
 <br/>
 
-    # 컨테이너 이미지 생성
-    $ docker build . -t simple-react-app .
+### 실행 방법
 
-    # 컨테이너 생성 및 실행
-    $ docker run -d --name simple-react-app -p 3000:3000 simple-react-app
+```shell
+# 컨테이너 이미지 생성
+$ docker build . -t simple-react-app .
+
+# 컨테이너 생성 및 실행
+$ docker run -d --name simple-react-app -p 3000:3000 simple-react-app
+```
 
 <br/>
 <br/>
@@ -76,11 +84,15 @@
 
 <br />
 
-    # 컨테이너 이미지 생성
-    $ docker build -t simple-spring-boot-app .
+### 실행 방법
 
-    # 컨테이너 생성 및 실행
-    $ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-app
+```shell
+# 컨테이너 이미지 생성
+$ docker build -t simple-spring-boot-app .
+
+# 컨테이너 생성 및 실행
+$ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-app
+```
 
 <br/>
 <br/>
@@ -95,20 +107,24 @@
 
 <br/>
 
-    # 프로젝트 접근
-    $ cd simple-redis
+### 실행 방법
 
-    # 컨테이너 이미지 생성
-    $ docker build -t simple-spring-boot-app .
+```shell
+# 프로젝트 접근
+$ cd simple-redis
 
-    # 컨테이너 생성 및 실행
-    $ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-app
+# 컨테이너 이미지 생성
+$ docker build -t simple-spring-boot-app .
 
-    # docker 컨테이너 아이디를 확인합니다
-    $ docker ps
+# 컨테이너 생성 및 실행
+$ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-app
 
-    # redis-cli를 접근합니다.
-    $ docker exec -it <CONTAINER ID> redis-cli
+# docker 컨테이너 아이디를 확인합니다
+$ docker ps
+
+# redis-cli를 접근합니다.
+$ docker exec -it <CONTAINER ID> redis-cli
+```
 
 <br/>
 <br/>
@@ -123,14 +139,18 @@
 
 <br/>
 
-    # 프로젝트 접근
-    $ cd simple-rabbitmq
+### 실행 방법
 
-    # 컨테이너 이미지 생성
-    $ docker build -t simple-rabbitmq .
+```shell
+# 프로젝트 접근
+$ cd simple-rabbitmq
 
-    # 컨테이너 생성 및 실행
-    $ docker run -d --name simple-rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq
+# 컨테이너 이미지 생성
+$ docker build -t simple-rabbitmq .
+
+# 컨테이너 생성 및 실행
+$ docker run -d --name simple-rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq
+```
 
 <br/>
 <br/>
@@ -145,14 +165,67 @@
 
 <br/>
 
-    # 프로젝트 접근
-    $ cd simple-docker-compose
+### 실행 방법
 
-    # docker compose 실행
-    $ docker-compose up
+```shell
+# 프로젝트 접근
+$ cd simple-docker-compose
 
-    # docker compose 상태 확인
-    $ docker-compose ps
+# docker compose 실행
+$ docker-compose up
 
-    # docker compose 삭제
-    $ docker-compose down
+# docker compose 상태 확인
+$ docker-compose ps
+
+# docker compose 삭제
+$ docker-compose down
+```
+
+
+<br/>
+
+## 6. simple-docker-compose-rabbitmq-cluster
+
+    > docker-compose를 이용하여 RabbitMQ 클러스터링 배포하기 
+
+<br/>
+
+### 실행 방법
+
+```shell
+# 프로젝트 접근
+$ cd simple-docker-compose-rabbitmq-cluster
+
+# docker compose 실행
+$ docker compose up
+
+# docker compose 상태 확인
+$ docker compose ps
+```
+
+<br/>
+
+
+### 클러스터링 구성
+
+<br/>
+    
+
+```shell
+# 1. rabbitmq-1을 기준으로 rabbitmq-2, rabbitmq-3 앱을 중지(stop_app), 앱을 초기화(reset)를 수행합니다.
+# 2. rabbitmq-1에 클러스터로 rabbitmq-2, rabbitmq-3을 추가합니다(join_cluster)
+# 3. rabbitmq-2, rabbitmq-3을 실행합니다(start_app)
+
+docker exec -it rabbitmq-2 rabbitmqctl stop_app
+docker exec -it rabbitmq-2 rabbitmqctl reset
+docker exec -it rabbitmq-2 rabbitmqctl join_cluster rabbit@rabbitmq-1
+docker exec -it rabbitmq-2 rabbitmqctl start_app
+
+docker exec -it rabbitmq-3 rabbitmqctl stop_app
+docker exec -it rabbitmq-3 rabbitmqctl reset
+docker exec -it rabbitmq-3 rabbitmqctl join_cluster rabbit@rabbitmq-1
+docker exec -it rabbitmq-3 rabbitmqctl start_app
+```
+<br/>
+
+
