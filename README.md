@@ -114,10 +114,10 @@ $ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-ap
 $ cd simple-redis
 
 # 컨테이너 이미지 생성
-$ docker build -t simple-spring-boot-app .
+$  docker build . -t simple-redis
 
 # 컨테이너 생성 및 실행
-$ docker run -d --name simple-spring-boot-app -p 8080:8080 simple-spring-boot-app
+$ docker run -d --name simple-redis -p 6379:6379 simple-redis
 
 # docker 컨테이너 아이디를 확인합니다
 $ docker ps
