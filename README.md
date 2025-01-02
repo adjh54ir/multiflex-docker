@@ -228,4 +228,33 @@ docker exec -it rabbitmq-3 rabbitmqctl start_app
 ```
 <br/>
 
+## 7. simple-apache-kafka
+    > docker-compose를 이용하여 Apache Kafka 배포하기 
 
+
+<br/>
+
+### 실행 방법
+
+```shell
+# 프로젝트 접근
+$ cd simple-apache-kafka
+
+# docker compose 실행
+$ docker-compose -f compose.yml up -d
+
+# docker compose 상태 확인
+$ docker-compose -f compose.yml ps
+
+# 컨테이너 접속
+$ docker exec -it [kafka-container-id] bash
+
+# 토픽 생성
+$ kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+# 토픽 목록 확인
+$ kafka-topics --list --bootstrap-server localhost:9092
+
+```
+
+<br/>
