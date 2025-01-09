@@ -1,6 +1,10 @@
-## 6. simple-docker-compose-rabbitmq-cluster
+## simple-docker-compose-rabbitmq-cluster
 
     ⭕️ docker-compose를 이용하여 RabbitMQ 클러스터링 배포하기
+
+<br/>
+
+- 참고 Reference : [Docker Compose를 이용한 RabbitMQ 노드 클러스터링 구성하기](https://adjh54.tistory.com/517)
 
 <br/>
 
