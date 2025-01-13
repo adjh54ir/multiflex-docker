@@ -19,10 +19,10 @@
 $ cd simple-apache-kafka
 
 # docker compose 실행
-$ docker-compose -f compose.yml up -d
+$ docker-compose up
 
 # docker compose 상태 확인
-$ docker-compose -f compose.yml ps
+$ docker-compose ps
 
 # 컨테이너 접속
 $ docker exec -it [kafka-container-id] bash

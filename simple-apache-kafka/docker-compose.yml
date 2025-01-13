@@ -17,12 +17,12 @@ services:
       CLUSTER_ID: 'ciWo7IWazngRchmPES6q5A=='
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
   kafka-ui:
-  image: provectuslabs/kafka-ui:latest
-  ports:
-    - "8080:8080"
-  environment:
-    KAFKA_CLUSTERS_0_NAME: local
-    KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-  depends_on:
-    - kafka
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+    depends_on:
+      - kafka
       
