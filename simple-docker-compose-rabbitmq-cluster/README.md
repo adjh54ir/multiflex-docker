@@ -15,10 +15,14 @@
 $ cd simple-docker-compose-rabbitmq-cluster
 
 # docker compose 실행
-$ docker compose up
+$ docker compose up -d
 
 # docker compose 상태 확인
 $ docker compose ps
+
+# 필요 시 : 실행중인 docker compose 삭제
+$ docker compose down
+
 ```
 
 <br/>

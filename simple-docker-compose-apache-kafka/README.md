@@ -1,4 +1,4 @@
-## simple-apache-kafka
+## simple-docker-compose-apache-kafka
 
     ⭕️ docker-compose를 이용하여 Apache Kafka 배포하기
 
@@ -19,10 +19,10 @@
 $ cd simple-apache-kafka
 
 # docker compose 실행
-$ docker-compose up
+$ docker compose up -d
 
 # docker compose 상태 확인
-$ docker-compose ps
+$ docker compose ps
 
 # 컨테이너 접속
 $ docker exec -it [kafka-container-id] bash
@@ -32,4 +32,7 @@ $ kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --p
 
 # 토픽 목록 확인
 $ kafka-topics --list --bootstrap-server localhost:9092
+
+# 필요 시 : 실행중인 docker compose 삭제
+$ docker compose down
 ```

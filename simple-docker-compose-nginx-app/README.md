@@ -15,9 +15,11 @@
 $ cd simple-docker-compose-nginx-app
 
 # 2. docker compose 실행
-$ docker-compose up -d
+$ docker compose up -d
 
 # 3. docker compose 상태 확인
-$ docker-compose -f compose.yml ps
+$ docker compose ps
 
+# 필요 시 : 실행중인 docker compose 삭제
+$ docker compose down
 ```

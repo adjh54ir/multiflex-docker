@@ -16,13 +16,13 @@
 $ cd simple-docker-compose
 
 # docker compose 실행
-$ docker-compose up
+$ docker compose up -d
 
 # docker compose 상태 확인
-$ docker-compose ps
+$ docker compose ps
 
-# docker compose 삭제
-$ docker-compose down
+# 필요 시 : 실행중인 docker compose 삭제
+$ docker compose down
 ```
 
 <br/>

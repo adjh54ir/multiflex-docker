@@ -15,10 +15,13 @@
 $ cd simple-docker-compose-jenkins
 
 # docker 컨테이너 이미지 생성
-$ docker compose up
+$ docker compose up -d
 
 # docker compose 상태 확인
 $ docker compose ps
+
+# 필요 시 : 실행중인 docker compose 삭제
+$ docker compose down
 ```
 
 <br/>
