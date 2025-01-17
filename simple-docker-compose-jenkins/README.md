@@ -1,4 +1,4 @@
-## simple-jenkins
+## simple-docker-compose-jenkins
 
     ⭕️ dockerfile을 기반으로 간단한 Jenkins Dokcer Image를 다운받고 컨테이너를 실행시킵니다.
 

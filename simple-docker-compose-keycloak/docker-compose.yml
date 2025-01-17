@@ -1,0 +1,28 @@
+services:
+  keycloak:
+    build: .
+    container_name: keycloak
+    ports:
+      - "9001:8080"
+    environment:
+      - KC_BOOTSTRAP_ADMIN_USERNAME=admin
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=admin
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://postgres:5432/testdb
+      - KC_DB_USERNAME=localmaster
+      - KC_DB_PASSWORD=qwer1234
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16-alpine3.21
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=testdb
+      - POSTGRES_USER=localmaster
+      - POSTGRES_PASSWORD=qwer1234
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
