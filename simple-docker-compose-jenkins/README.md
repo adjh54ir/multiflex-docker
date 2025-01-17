@@ -4,29 +4,24 @@
 
 <br/>
 
-- 참고 Reference : [Dockerfile 이해하고 Nginx 구성 및 실행하기](https://adjh54.tistory.com/414)
+- 참고 Reference : [Docker Compose를 이용한 Jenkins 환경 구성 및 실행방법](https://adjh54.tistory.com/642)
 
 <br/>
 
 ### 실행 방법
 
 ```shell
-
 # 프로젝트 접근
 $ cd simple-docker-compose-jenkins
 
 # docker 컨테이너 이미지 생성
-$ docker build -t simple-jenkins .
+$ docker compose up
 
-# docker 컨테이너 생성 및 실행
-$ docker run -d \
-  --name jenkins \
-  -p 8080:8080 \
-  -p 50000:50000 \
-  -v jenkins_home:/var/jenkins_home \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  simple-jenkins
+# docker compose 상태 확인
+$ docker compose ps
 ```
 
 <br/>
 <br/>
+
+
