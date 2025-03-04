@@ -1,0 +1,36 @@
+services:
+  redis:
+    image: redis:7.4.2-alpine
+    container_name: simple-redis
+    ports:
+      - 6379:6379
+    command: [ "redis-server" ]
+    networks:
+      - redis-network
+    volumes:
+      - redis_volume_data:/data
+    # volumes:
+    #   - ../conf/compose-redis:/data
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: simple-redisinsight
+    ports:
+      - 5540:5540
+    networks:
+      - redis-network
+    depends_on:
+      - redis
+    volumes:
+      - redis_insight_volume_data:/db
+    # volumes:
+    #   - ../conf/compose-redis/redis-insight-data:/db
+
+
+networks:
+  redis-network:
+    driver: bridge
+
+volumes:
+  redis_volume_data:
+  redis_insight_volume_data:
